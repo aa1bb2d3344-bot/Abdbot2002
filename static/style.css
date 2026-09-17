@@ -1,0 +1,194 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #07111f;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  background: #0d1b2e;
+  border-bottom: 1px solid #1d3048;
+}
+
+header b {
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+header a {
+  color: #ffffff;
+  text-decoration: none;
+  background: #1b2d45;
+  padding: 8px 14px;
+  border-radius: 8px;
+}
+
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 24px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.card {
+  background: #0d1b2e;
+  border: 1px solid #1d3048;
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 18px;
+}
+
+.signal {
+  text-align: center;
+}
+
+.signal-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #9fb3c8;
+}
+
+.big {
+  font-size: 38px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.price {
+  font-size: 22px;
+}
+
+.buy {
+  color: #35d07f;
+}
+
+.sell {
+  color: #ff5c8a;
+}
+
+.wait {
+  color: #ffd166;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.grid .card {
+  margin-bottom: 0;
+}
+
+.grid span {
+  display: block;
+  color: #9fb3c8;
+  margin-bottom: 8px;
+}
+
+.grid strong {
+  font-size: 20px;
+}
+
+.indicators {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.indicators div {
+  background: #07111f;
+  padding: 14px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.indicators b {
+  display: block;
+  margin-top: 8px;
+}
+
+select,
+input,
+button {
+  font: inherit;
+}
+
+select {
+  background: #0d1b2e;
+  color: white;
+  border: 1px solid #1d3048;
+  padding: 10px 14px;
+  border-radius: 8px;
+}
+
+.login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login .card {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 13px;
+  margin: 10px 0;
+  border: 1px solid #1d3048;
+  border-radius: 8px;
+  background: #07111f;
+  color: white;
+}
+
+button {
+  width: 100%;
+  padding: 13px;
+  border: 0;
+  border-radius: 8px;
+  background: #35d07f;
+  color: #07111f;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.error {
+  color: #ff5c8a;
+  margin: 10px 0;
+}
+
+@media (
