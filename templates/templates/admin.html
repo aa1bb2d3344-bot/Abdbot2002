@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة الأكواد</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>إدارة أكواد الاشتراك</h1>
+
+        <label for="adminKey">ADMIN_KEY</label>
+        <input id="adminKey" type="password" placeholder="أدخل مفتاح الإدارة">
+
+        <button onclick="createCode()">إنشاء كود اشتراك</button>
+
+        <div id="result"></div>
+
+        <br>
+        <a href="/login">العودة لتسجيل الدخول</a>
+    </div>
+
+    <script>
+        async function createCode() {
+            const key = document.getElementById("adminKey").value;
+            const result = document.getElementById("result");
+
+            if (!key) {
+                result.textContent = "أدخل ADMIN_KEY أولاً";
+                return;
+            }
+
+            try {
+                const response = await fetch("/admin/create-code", {
+                    method: "POST",
+                    headers: {
+                        "X-Admin-Key": key
+                    }
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    result.textContent = "كود الاشتراك: " + data.code;
+                } else {
+                    result.textContent = data.error || "حدث خطأ";
+                }
+            } catch (error) {
+                result.textContent = "تعذر الاتصال بالخادم";
+            }
+        }
+    </script>
+</body>
+</html>
